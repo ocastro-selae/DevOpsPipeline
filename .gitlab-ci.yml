@@ -1,0 +1,16 @@
+stage:
+  - build
+  - test
+  
+buil_demo:
+  stage: build
+  script:
+    - echo "Estoy en la fase de Building"
+    - mkdri build
+    - touch build/info.txt
+    
+ test_demo:
+  stage: test
+  script: 
+    - echo "Estoy en la fase de Testing"
+    - test -f "build/info.txt"
